@@ -1,9 +1,9 @@
 import React from 'react'
+import { IFlashcard } from '../Interface'
 import Flashcard from './Flashcard'
-import { IFlashcard } from './Interface'
 
 type Props = {
-    flashcards: IFlashcard[],
+    flashcards: IFlashcard [],
 }
 
 function FlashcardList({flashcards}: Props) {

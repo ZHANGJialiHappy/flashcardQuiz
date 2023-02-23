@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FlashcardList from "./FlashcardList";
+import FlashcardList from "./components/FlashcardList";
 import { IFlashcard } from "./Interface";
 
 
