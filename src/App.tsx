@@ -24,17 +24,17 @@ const SAMPLE_FLASHCARDS = [
       '4',
       '5'
     ]
-  // },
-  // {
-  //   id: 2,
-  //   question: 'Question2',
-  //   answer:'Answer',
-  //   options: [
-  //     'Answer1',
-  //     'Answer2',
-  //     'Answer3',
-  //     'Answer4'
-  //   ]
+  },
+  {
+    id: 2,
+    question: 'Question2',
+    answer:'Answer',
+    options: [
+      'Answer1',
+      'Answer2',
+      'Answer3',
+      'Answer4'
+    ]
   }
 ]
 
