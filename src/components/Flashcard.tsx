@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { IFlashcard } from '../Interface';
 import answer from '../pic/answer.jpg';
 import question from '../pic/question.jpeg'
+import '../customize/flashcard.css'
 
 
 type Props = {
@@ -12,33 +13,39 @@ function Flashcard({ flashcard }: Props) {
   const [flip, setFlip] = useState<boolean>(false);
 
   return (
-    <div className="card w-96 bg-base-100 shadow-xl image-full h-[300px] h-[300px] "
-      onClick={() => setFlip(!flip)}>
+    <div className="w-[300px] h-[300px] bg-transparent perspective">
+      <div className={`relative preserve-3d w-full h-full duration-1000 ${flip ? 'my-rotate-y-180' : ''}`}>
 
-      {flip ?
-        <>
-          <figure><img src={answer} alt="Answer" className="w-[300px]"/></figure>
+        <div className="card bg-base-100 shadow-xl image-full absolute backface-hidden w-full h-full">
+          <figure><img src={question} alt="Question" className="w-[300px]" /></figure>
+          <div className="card-body">
+            <h2 className="card-title">Question:</h2>
+            <p>{flashcard.question}</p>
+            <p>{flashcard.options.map(option => {
+              return <li>{option}</li>
+            })}</p>
+            <div className="card-actions justify-end">
+              <button className="btn btn-outline btn-warning"
+                onClick={() => setFlip(!flip)}>Show Answer</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div className="card bg-base-100 shadow-xl image-full absolute backface-hidden w-full h-full my-rotate-y-180">
+          <figure><img src={answer} alt="Answer" className="w-[300px]" /></figure>
           <div className="card-body">
             <h2 className="card-title">Answer:</h2>
             <p>{flashcard.answer}</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-outline btn-warning">Show Question</button>
+              <button className="btn btn-outline btn-warning"
+                onClick={() => setFlip(!flip)}>Show Question</button>
             </div>
           </div>
-        </>
-        :
-        <>
-          <figure><img src={question} alt="Question" className="w-[300px]"/></figure>
-          <div className="card-body">
-            <h2 className="card-title">Question:</h2>
-            <p>{flashcard.question}</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-outline btn-warning">Show Answer</button>
-            </div>
-          </div>
-        </>
-      }
 
+        </div>
+
+      </div>
     </div>
   )
 }
