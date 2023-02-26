@@ -13,10 +13,10 @@ function Flashcard({ flashcard }: Props) {
   const [flip, setFlip] = useState<boolean>(false);
 
   return (
-    <div className="w-[300px] h-[300px] bg-transparent perspective">
-      <div className={`relative preserve-3d w-full h-full duration-1000 ${flip ? 'my-rotate-y-180' : ''}`}>
+    <div className="w-[300px] h-[300px] bg-transparent group">
+      <div className={`relative preserve-3d w-full h-full duration-1000 transform group-hover:my-translate-2 ${flip ? 'flip' : ''}`}>
 
-        <div className="card bg-base-100 shadow-xl image-full absolute backface-hidden w-full h-full">
+        <div className="card bg-base-100 image-full absolute backface-hidden w-full h-full group-hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)]">
           <figure><img src={question} alt="Question" className="w-[300px]" /></figure>
           <div className="card-body">
             <h2 className="card-title">Question:</h2>
@@ -32,7 +32,7 @@ function Flashcard({ flashcard }: Props) {
 
         </div>
 
-        <div className="card bg-base-100 shadow-xl image-full absolute backface-hidden w-full h-full my-rotate-y-180">
+        <div className="card bg-base-100 shadow-xl image-full absolute backface-hidden w-full h-full my-rotate-y-180 hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
           <figure><img src={answer} alt="Answer" className="w-[300px]" /></figure>
           <div className="card-body">
             <h2 className="card-title">Answer:</h2>

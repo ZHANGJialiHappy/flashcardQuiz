@@ -18,3 +18,15 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
+
+.transform {
+    transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+}
+
+.group:hover .group-hover\:my-translate-2 {
+    --translate-y: 2px;
+  }
+
+  .flip {
+    --rotate-y: 180deg;
+  }
