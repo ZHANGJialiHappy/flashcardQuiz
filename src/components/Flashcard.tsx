@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { IFlashcard } from '../Interface';
 import answer from '../pic/answer.jpg';
 import question from '../pic/question.jpeg'
 import '../customize/flashcard.css'
+import { FlashcardState } from '../App';
 
 
 type Props = {
-  flashcard: IFlashcard;
+  flashcard: FlashcardState;
 }
 
 function Flashcard({ flashcard }: Props) {
@@ -18,14 +18,15 @@ function Flashcard({ flashcard }: Props) {
 
         <div className="w-[full] h-[full] card bg-base-100 image-full absolute backface-hidden w-full h-full group-hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)]">
           <figure><img src={question} alt="Question" className="w-[350px]" /></figure>
-          <div className="card-body relative w-[full] h-[full] overflow-hidden">
-            {/* <div className="w-[full] h-[full] bg-transparent "> */}
+          <div className="card-body relative flex w-[full] h-[full] overflow-y-hidden">
+          <div className="card-body bg-transparent w-[full] h-[full] mb-10 overflow-y-auto">
+
             <h2 className="card-title">Question:</h2>
             <p>{flashcard.question}</p>
             <p>{flashcard.options.map(option => {
               return <li>{option}</li>
             })}</p>
-            {/* </div> */}
+            </div>
             <div className="card-actions justify-end absolute bottom-7 right-7">
               <button className="btn btn-outline btn-warning"
                 onClick={() => setFlip(!flip)}>Show Answer</button>
@@ -35,15 +36,15 @@ function Flashcard({ flashcard }: Props) {
         </div>
 
         <div className="card bg-base-100 shadow-xl image-full absolute backface-hidden w-full h-full my-rotate-y-180 hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
-          <figure><img src={answer} alt="Answer" className="w-[300px]" /></figure>
+          <figure><img src={answer} alt="Answer" className="w-[350px]" /></figure>
           <div className="card-body relative">
-          <div className="w-[full] h-[full] bg-transparent overflow-hidden">
+
+          <div className="w-[full] h-[full] bg-transparent overflow-y-hidden">
+          <div className="card-body bg-transparent w-[full] h-[full] overflow-y-auto">
 
             <h2 className="card-title">Answer:</h2>
             <p>{flashcard.answer}</p>
-            
-            {/* <p>{flashcard.answer}</p> */}
-
+            </div>
             </div>
 
             <div className="card-actions justify-end absolute bottom-7 right-7">
