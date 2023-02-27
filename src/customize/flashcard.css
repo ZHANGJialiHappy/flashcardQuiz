@@ -7,7 +7,7 @@
 }
 
 .duration-1000 {
-    transition-duration: 1000ms;
+    transition-duration: 700ms;
 }
 
 .my-rotate-y-180 {
@@ -19,12 +19,13 @@
     backface-visibility: hidden;
 }
 
+
 .transform {
-    transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+    transform: rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
 }
 
 .group:hover .group-hover\:my-translate-2 {
-    --translate-y: 2px;
+    --translate-y: 0.5rem;
   }
 
   .flip {
