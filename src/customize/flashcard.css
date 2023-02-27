@@ -31,3 +31,7 @@
   .flip {
     --rotate-y: 180deg;
   }
+
+  img {
+    opacity: 0.4;
+  }
