@@ -3,7 +3,7 @@ import { IFlashcard } from '../Interface'
 import Flashcard from './Flashcard'
 
 type Props = {
-    flashcards: IFlashcard [],
+    flashcards: IFlashcard[],
 }
 
 function FlashcardList({flashcards}: Props) {

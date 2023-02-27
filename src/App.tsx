@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import FlashcardList from "./components/FlashcardList";
-import { IFlashcard, IFlashcard2 } from "./Interface";
+import { IFlashcard } from "./Interface";
 import axios from "axios";
 
 
 function App() {
-  const [flashcards, setFlashcards] = useState<IFlashcard[]>(SAMPLE_FLASHCARDS)
+  const [flashcards, setFlashcards] = useState<IFlashcard[]>([])
 
   useEffect(()=> {
     axios
       .get("https://opentdb.com/api.php?amount=10")
       .then(res=>{
-        setFlashcards(res.data.results.map((questionItem:IFlashcard2, index:string)=>{
+        setFlashcards(res.data.results.map((questionItem:IFlashcard, index:string)=>{
+          // IFlashcard
+
           const answer = questionItem.correct_answer
           const options = [...questionItem.incorrect_answers, answer]
           return{
@@ -21,7 +23,6 @@ function App() {
             options: options.sort(()=> Math.random() - .5),
           }
         }))
-        console.log(res.data);
       })
   }, [])
 
@@ -32,30 +33,7 @@ function App() {
   );
 }
 
-const SAMPLE_FLASHCARDS = [
-  {
-    id: '1',
-    question: 'What is 2+2?',
-    answer:'4',
-    options: [
-      '2',
-      '3',
-      '4',
-      '5'
-    ]
-  },
-  {
-    id: '2',
-    question: 'Question2',
-    answer:'Answer',
-    options: [
-      'Answer1',
-      'Answer2',
-      'Answer3',
-      'Answer4'
-    ]
-  }
-]
+
 
 
 export default App;
