@@ -50,13 +50,12 @@ function App() {
 
   return (
     <>
-      <form className="flex justify-center mt-10" >
-        <div className="flex gap-5 items-end">
+      <form className="flex justify-center mt-10 gap-5 items-end" >
           <div>
             <label className="label font-bold">
               <span className="label-text">Category</span>
             </label>
-            <select className="select select-warning max-w-xs w-44">
+            <select className="select select-warning w-48">
               <option>Cheese</option>
             </select>
           </div>
@@ -65,14 +64,12 @@ function App() {
             <label className="label font-bold">
               <span className="label-text">How many questions?</span>
             </label>
-            <input type="number" placeholder="" min="1" max="10" step="1" defaultValue={10} className="input input-bordered input-warning max-w-xs w-44" />
+            <input type="number" placeholder="" min="1" max="10" step="1" defaultValue={10} className="input input-bordered input-warning w-48" />
           </div>
 
           <div>
             <button className="btn btn-outline btn-warning">Go</button>
           </div>
-
-        </div>
 
       </form>
       <div className="max-w-screen-2xl">
