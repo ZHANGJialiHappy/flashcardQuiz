@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import answer from '../pic/answer.jpg';
 import question from '../pic/question.jpeg'
 import '../customize/flashcard.css'
@@ -19,7 +19,7 @@ function Flashcard({ flashcard }: Props) {
         <div className="w-[full] h-[full] card bg-base-100 image-full absolute backface-hidden w-full h-full group-hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)]">
           <figure><img src={question} alt="Question" className="w-[350px]" /></figure>
           <div className="card-body relative flex w-[full] h-[full] overflow-y-hidden">
-          <div className="card-body bg-transparent w-[full] h-[full] mb-10 overflow-y-auto">
+          <div className="card-body bg-transparent w-[full] h-[full] mb-8 overflow-y-auto">
 
             <h2 className="card-title">Question:</h2>
             <p>{flashcard.question}</p>
