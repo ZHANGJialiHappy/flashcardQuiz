@@ -17,13 +17,15 @@ function Flashcard({ flashcard }: Props) {
       <div className={`relative preserve-3d w-full h-full duration-1000 transform group-hover:my-translate-2 ${flip ? 'flip' : ''}`}>
 
         <div className="card bg-base-100 image-full absolute backface-hidden w-full h-full group-hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)]">
-          <figure><img src={question} alt="Question" /></figure>
+          <figure><img src={question} alt="Question" className={flip ? 'hidden' : ''} /></figure>
+          {/* className={flip ? 'hidden' : ''} */}
+          
           <div className={`card-body overflow-y-hidden ${flip ? 'hidden' : ''}`}>
             <div className="overflow-y-auto h-[300px]">
               <h2 className="card-title">Question:</h2>
               <p>{flashcard.question}</p>
               <p>{flashcard.options.map(option => {
-                return <li>{option}</li>
+                return <li key={option}>{option}</li>
               })}</p>
             </div>
             <div className="card-actions justify-end">
