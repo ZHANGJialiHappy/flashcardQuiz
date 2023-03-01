@@ -15,11 +15,8 @@ function Flashcard({ flashcard }: Props) {
   return (
     <div className="w-[350px] h-[350px] bg-transparent group">
       <div className={`relative preserve-3d w-full h-full duration-1000 transform group-hover:my-translate-2 ${flip ? 'flip' : ''}`}>
-
         <div className="card bg-base-100 image-full absolute backface-hidden w-full h-full group-hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)]">
-          <figure><img src={question} alt="Question" className={flip ? 'hidden' : ''} /></figure>
-          {/* className={flip ? 'hidden' : ''} */}
-          
+          <figure><img src={question} alt="Question" className={flip ? 'hidden' : ''} /></figure>          
           <div className={`card-body overflow-y-hidden ${flip ? 'hidden' : ''}`}>
             <div className="overflow-y-auto h-[300px]">
               <h2 className="card-title">Question:</h2>
@@ -33,9 +30,7 @@ function Flashcard({ flashcard }: Props) {
                 onClick={() => setFlip(!flip)}>Show Answer</button>
             </div>
           </div>
-
         </div>
-
         <div className="card bg-base-100 image-full absolute backface-hidden w-full h-full my-rotate-y-180 hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
           <figure><img src={answer} alt="Answer" /></figure>
           <div className="card-body overflow-hidden">
@@ -43,15 +38,12 @@ function Flashcard({ flashcard }: Props) {
               <h2 className="card-title">Answer:</h2>
               <p>{flashcard.answer}</p>
             </div>
-
             <div className="card-actions justify-end">
               <button className="btn btn-outline btn-warning"
                 onClick={() => setFlip(!flip)}>Show Question</button>
             </div>
           </div>
-
         </div>
-
       </div>
     </div>
   )

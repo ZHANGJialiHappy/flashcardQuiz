@@ -1,4 +1,3 @@
-import React from 'react'
 import Flashcard from './Flashcard'
 import '../customize/flashcard.css'
 import { FlashcardState } from '../App'

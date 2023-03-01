@@ -21,15 +21,13 @@ export type FlashcardState = {
 type CategoriesResponse = {
   id: number;
   name: string;
-  //   name: string;
 }
-
 
 function App() {
   const [flashcards, setFlashcards] = useState<FlashcardState[]>([]);
   const [categories, setCategories] = useState<CategoriesResponse[]>([]);
-  const [categoryId, setCategoryId] = useState<number>(9);
-  const [amount, setAmount] = useState<number>(10);
+  const [categoryId, setCategoryId] = useState<number>();
+  const [amount, setAmount] = useState<number | string>(10);
 
   function decodeString(str: string) {
     const textArea = document.createElement('textarea');
@@ -41,21 +39,19 @@ function App() {
     axios
       .get("https://opentdb.com/api_category.php")
       .then((res: { data: { trivia_categories: CategoriesResponse[] } }) => {
-        const categoryArray = res.data.trivia_categories
-        console.log(res.data);
+        const categoryArray = res.data.trivia_categories;
+        const id = categoryArray[0].id;
         setCategories(categoryArray);
-      }
-      )
-  }, [])
+        setCategoryId(id);
+        getQustionsByCategory(id);
+      })
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-  function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
-    e.preventDefault();
-
+  const getQustionsByCategory = (categoryId: number | undefined) => {
     const url = `https://opentdb.com/api.php?amount=${amount}&category=${categoryId}`;
     axios
       .get(url)
       .then((res: { data: { results: AnswerResponse[] } }) => {
-        console.log(res.data);
         setFlashcards(res.data.results.map((questionItem, index) => {
           const answer: string = decodeString(questionItem.correct_answer);
           const options = [
@@ -69,6 +65,21 @@ function App() {
           }
         }))
       })
+  }
+
+  function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
+    e.preventDefault();
+    getQustionsByCategory(categoryId);
+  }
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const value = e.target.value
+    if (value) {
+      setAmount(Number(value))
+    } else {
+      setAmount('')
+      return
+    }
   }
 
   return (
@@ -87,8 +98,8 @@ function App() {
           <label className="label font-bold">
             <span className="label-text">How many questions?</span>
           </label>
-          <input type="number" placeholder="" min="1" max="50" step="1" value={amount} className="input input-bordered input-warning w-48" 
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAmount(Number(e.target.value))}/>
+          <input type="number" min="1" max="50" step="1" value={amount} className="input input-bordered input-warning w-48"
+            onChange={handleChange} />
         </div>
 
         <div>
