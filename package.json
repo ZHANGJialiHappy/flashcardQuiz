@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://ZHANGJialiHappy.github.io/falshcardQuiz",
+  "homepage": "https://ZHANGJialiHappy.github.io/flashcardQuiz",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
