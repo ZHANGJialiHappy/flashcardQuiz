@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/falshcardQuiz/static/css/main.2c59c87a.css",
-    "main.js": "/falshcardQuiz/static/js/main.8b30bcbf.js",
-    "static/media/question.jpeg": "/falshcardQuiz/static/media/question.91d79550411cda3d7776.jpeg",
-    "static/media/answer.jpg": "/falshcardQuiz/static/media/answer.0526b2261bded09a3d5d.jpg",
-    "index.html": "/falshcardQuiz/index.html",
-    "main.2c59c87a.css.map": "/falshcardQuiz/static/css/main.2c59c87a.css.map",
-    "main.8b30bcbf.js.map": "/falshcardQuiz/static/js/main.8b30bcbf.js.map"
+    "main.css": "/flashcardQuiz/static/css/main.2c59c87a.css",
+    "main.js": "/flashcardQuiz/static/js/main.0fa82eac.js",
+    "static/media/question.jpeg": "/flashcardQuiz/static/media/question.91d79550411cda3d7776.jpeg",
+    "static/media/answer.jpg": "/flashcardQuiz/static/media/answer.0526b2261bded09a3d5d.jpg",
+    "index.html": "/flashcardQuiz/index.html",
+    "main.2c59c87a.css.map": "/flashcardQuiz/static/css/main.2c59c87a.css.map",
+    "main.0fa82eac.js.map": "/flashcardQuiz/static/js/main.0fa82eac.js.map"
   },
   "entrypoints": [
     "static/css/main.2c59c87a.css",
-    "static/js/main.8b30bcbf.js"
+    "static/js/main.0fa82eac.js"
   ]
 }
