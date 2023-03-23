@@ -13,12 +13,12 @@ function Flashcard({ flashcard }: Props) {
   const [flip, setFlip] = useState<boolean>(false);
 
   return (
-    <div className="w-[350px] h-[350px] bg-transparent group">
+    <div className="w-80 h-80 bg-transparent group">
       <div className={`relative preserve-3d w-full h-full duration-1000 transform group-hover:my-translate-2 ${flip ? 'flip' : ''}`}>
-        <div className="card bg-base-100 image-full absolute backface-hidden w-full h-full group-hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)]">
+        <div className="card bg-base-100 image-full absolute backface-hidden w-full h-full group-hover:shadow-[0_2.188rem_3.75rem_-0.938rem_rgba(0,0,0,0.5)]">
           <figure><img src={question} alt="Question" className={flip ? 'hidden' : ''} /></figure>          
           <div className={`card-body overflow-y-hidden ${flip ? 'hidden' : ''}`}>
-            <div className="overflow-y-auto h-[300px]">
+            <div className="overflow-y-auto h-72">
               <h2 className="card-title">Question:</h2>
               <p>{flashcard.question}</p>
               <p>{flashcard.options.map(option => {
@@ -31,10 +31,10 @@ function Flashcard({ flashcard }: Props) {
             </div>
           </div>
         </div>
-        <div className="card bg-base-100 image-full absolute backface-hidden w-full h-full my-rotate-y-180 hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
+        <div className="card bg-base-100 image-full absolute backface-hidden w-full h-full my-rotate-y-180 hover:shadow-[0_2.188rem_3.75rem_-0.938rem_rgba(0,0,0,0.5)]">
           <figure><img src={answer} alt="Answer" /></figure>
           <div className="card-body overflow-hidden">
-            <div className="overflow-y-auto h-[300px]">
+            <div className="overflow-y-auto h-72">
               <h2 className="card-title">Answer:</h2>
               <p>{flashcard.answer}</p>
             </div>

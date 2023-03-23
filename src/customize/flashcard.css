@@ -1,5 +1,5 @@
 .perspective {
-    perspective: 1000px;
+    perspective: 62.5rem;
 }
 
 .preserve-3d {
@@ -37,5 +37,5 @@
   }
 
   .gridRepeat {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 350px));
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 20rem));
   }
