@@ -43,11 +43,11 @@ function App() {
         const id = categoryArray[0].id;
         setCategories(categoryArray);
         setCategoryId(id);
-        getQustionsByCategory(id);
+        getQuestionsByCategory(id);
       })
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const getQustionsByCategory = (categoryId: number | undefined) => {
+  const getQuestionsByCategory = (categoryId: number | undefined) => {
     const url = `https://opentdb.com/api.php?amount=${amount}&category=${categoryId}`;
     axios
       .get(url)
@@ -69,7 +69,7 @@ function App() {
 
   function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
-    getQustionsByCategory(categoryId);
+    getQuestionsByCategory(categoryId);
   }
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
