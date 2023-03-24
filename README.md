@@ -1,11 +1,12 @@
-## stack
+## Stack
 
 1. CSS transform
 2. Tailwind CSS
 3. react
 4. TypeScript
 
-## demo
+## Demo
+
 Check my application on [`gh-pages`](https://zhangjialihappy.github.io/flashcardQuiz/).
 
 ## Steps
