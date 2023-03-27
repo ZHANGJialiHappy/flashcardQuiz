@@ -73,16 +73,6 @@ function App() {
     getQuestionsByCategory(categoryId);
   }
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const value = e.target.value
-    if (value) {
-      setAmount(Number(value))
-    } else {
-      setAmount('')
-      return
-    }
-  }
-
   return (
     <>
       <form className="flex justify-center mt-10 gap-5 items-end" onSubmit={handleSubmit} >
@@ -100,7 +90,7 @@ function App() {
             <span className="label-text">How many questions?</span>
           </label>
           <input type="number" min="1" max="50" step="1" value={amount} className="input input-bordered input-warning w-48"
-            onChange={handleChange} />
+            onChange={(e: React.ChangeEvent<HTMLInputElement>)=> setAmount(e.target.value)} />
         </div>
 
         <div>
