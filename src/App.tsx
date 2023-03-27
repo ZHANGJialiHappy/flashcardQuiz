@@ -29,6 +29,7 @@ function App() {
   const [categoryId, setCategoryId] = useState<number>();
   const [amount, setAmount] = useState<number | string>(10);
 
+  // https://stackoverflow.com/questions/48341966/how-to-evaluate-nbsp-in-a-string
   function decodeString(str: string) {
     const textArea = document.createElement('textarea');
     textArea.innerHTML = str;
