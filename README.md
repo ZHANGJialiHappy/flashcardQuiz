@@ -1,3 +1,6 @@
+## Inspired by 
+[`flip card`](https://www.w3schools.com/howto/howto_css_flip_card.asp)
+
 ## Stack
 
 1. CSS transform
