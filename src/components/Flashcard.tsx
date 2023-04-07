@@ -38,10 +38,10 @@ function Flashcard({ flashcard }: Props) {
               <h2 className="card-title">Answer:</h2>
               <p>{flashcard.answer}</p>
             </div>
-            <div className="card-actions justify-end">
+            {/* <div className="card-actions justify-end">
               <button className="btn btn-outline btn-warning"
                 onClick={() => setFlip(!flip)}>Show Question</button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
